@@ -1,7 +1,5 @@
 const socket = io('http://localhost:3000');
 
-import { checkTextForBadWords } from "../../controllers/badwords.controller";
-
 //DOM
 let message = document.getElementById("message")
 let username = document.getElementById("username")

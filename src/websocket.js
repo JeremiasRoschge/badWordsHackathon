@@ -1,5 +1,7 @@
 
 import { Server } from 'socket.io';
+
+import { checkTextForBadWords } from "./controllers/badwords.controller"
  
 const initWb = (server) => {
     const io = new Server(server, {
@@ -12,6 +14,7 @@ const initWb = (server) => {
         console.log('New WebSocket connection', socket.id);
       
         socket.on('chat:message', (data) => {
+          console.log(data)
           io.sockets.emit('chat:message', data)
       
           // Envía un mensaje de respuesta al cliente
